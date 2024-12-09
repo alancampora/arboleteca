@@ -8,12 +8,15 @@
     "migrate": "tsc && node dist/scripts/migrate-to-mongo.js",
     "find-nearest": "tsc && node dist/utils/find-nearest.js",
     "migrate-to-json": "node src/scripts/migrate.js",
+    "tree-from-wikipedia": "tsc && node dist/scripts/tree-from-wikipedia.js",
+    "scrape-wikipedia": "node src/scripts/scrape-wikipedia.js",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
     "csv-parser": "^3.0.0",
@@ -21,6 +24,9 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "geokdbush": "^2.0.1",

@@ -10,6 +10,8 @@ const connectionString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.
 
 async function run() {
   try {
+    return;
+
     await mongoose.connect(connectionString);
 
     // Transformar datos a formato GeoJSON para 'location'
@@ -18,8 +20,8 @@ async function run() {
       location: {
         type: "Point",
         coordinates: [
-          parseFloat(item.long),
-          parseFloat(item.lat)
+          // parseFloat(item.long),
+          // parseFloat(item.lat)
         ]
       }
     }));

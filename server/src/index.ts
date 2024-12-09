@@ -1,4 +1,6 @@
+import treeInformation from './tree-information';
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import { findNearestTrees } from './utils/find-nearest-trees';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
@@ -9,6 +11,7 @@ const app = express();
 
 // Middleware para parsear JSON
 app.use(express.json());
+app.use(cors());
 
 app.get('/nearest/tree', async (req: any, res: any) => {
   const { lat, long } = req.query;
@@ -22,7 +25,14 @@ app.get('/nearest/tree', async (req: any, res: any) => {
 
   try {
     const nearestTrees = await findNearestTrees(latitude, longitude);
-    res.json(nearestTrees);
+    let nearestTressWithMoreData = [];
+    for (const tree of nearestTrees) {
+      const formattedTree = tree.toObject();
+      nearestTressWithMoreData.push({ ...formattedTree, information: { ...treeInformation[formattedTree?.nombre_cientifico as keyof typeof treeInformation] } });
+    }
+
+    //res.json(nearestTrees);
+    res.json(nearestTressWithMoreData);
   } catch (error) {
     console.error("Error en la consulta:", error);
     res.status(500).json({ error: "Error interno del servidor" });
