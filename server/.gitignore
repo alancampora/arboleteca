@@ -1,4 +1,6 @@
 # Logs
+./data/output*
+./data/arbolado*
 logs
 *.log
 npm-debug.log*
