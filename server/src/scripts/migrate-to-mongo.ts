@@ -8,15 +8,15 @@ dotenv.config();
 const connectionString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER_DB}`;
 
 
-async function run() {
+async function run(type:string) {
   try {
     await mongoose.connect(connectionString);
 
     // Transformar datos a formato GeoJSON para 'location'
     const docs = data.map((item: any) => {
-      const type = "park";
       let street_info;
       let park_info;
+
       if (type == "street") {
         street_info = {
           district: item.district,
@@ -30,7 +30,6 @@ async function run() {
 
         }
       }
-
 
       if (type == "park") {
         park_info = {
@@ -74,4 +73,4 @@ async function run() {
   }
 }
 
-run();
+run("park");
