@@ -1,8 +1,12 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { MdPlace } from "react-icons/md";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
+import { LoadingSpinner } from '../../components/ui/loading-spinner';
 
 function NearestTree() {
   const [trees, setTrees] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -16,6 +20,7 @@ function NearestTree() {
         const longitude = position.coords.longitude;
 
         // Now fetch from your endpoint with the user's actual location
+        setIsLoading(true);
         fetch(`http://localhost:3000/nearest/tree?lat=${latitude}&long=${longitude}`)
           .then((response) => {
             if (!response.ok) {
@@ -25,8 +30,10 @@ function NearestTree() {
           })
           .then((data) => {
             setTrees(data);
+            setIsLoading(false);
           })
           .catch((err) => {
+            setIsLoading(false);
             setError(err.message);
           });
       },
@@ -42,17 +49,39 @@ function NearestTree() {
   }, []);
 
   return (
-    <div>
-      <h1>Que arbol tengo cerca ?</h1>
+    <div className="bg-stone-100 h-lvh p-2">
+      <div className="text-center m-2">
+        <h1 className="text-5xl">Que arbol tengo cerca ?</h1>
+      </div>
+      {isLoading && <LoadingSpinner />}
       {error && <p>Error: {error}</p>}
-      {!error && trees.length === 0 && <p>No se encontraron arboles en la cercania.</p>}
-      <ul>
+      {!error && !isLoading && trees.length === 0 && <p>No se encontraron arboles en la cercania.</p>}
+      <div className="flex flex-wrap gap-4 justify-center items-stretch">
         {trees.map((tree, index) => (
-          <li key={index}>
-            <strong>{tree.nombre_cientifico}</strong> at {tree.direccion_normalizada}
-          </li>
+          <div className="w-full h-full sm:w-1/2 md:w-1/3 lg:w-1/5 m-2">
+            <div className="rounded-t-lg bg-emerald-500 p-4 ">
+              <p className="text-center text-xl text-white text-bold font-semibold">{tree?.information.name}</p>
+            </div>
+            <div>
+              <img src={tree.information.img} />
+            </div>
+            <div className="bg-orange-200 p-4">
+              <p className="text-justify">{tree.information.summary}</p>
+            </div>
+            <div className="bg-orange-200 p-4">
+
+              <div className="flex items-center justify-center">
+                <MdPlace className="text-emerald-500"/>
+                <p className="text-justify">{tree.direccion_normalizada}</p>
+
+              </div>
+            </div>
+
+          </div>
+
+
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
