@@ -18,7 +18,7 @@ export default function LocationFetcher (){
         setLocation({ latitude, longitude });
       },
       (err: GeolocationPositionError) => {
-        setError('No se pudo obtener la ubicación. Asegúrate de permitir el acceso.');
+       setError('No se pudo obtener la ubicación. Asegúrate de permitir el acceso.' + err);
       }
     );
   }, []);

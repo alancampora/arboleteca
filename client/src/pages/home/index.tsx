@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { MdPlace } from "react-icons/md";
 import { LoadingSpinner } from '../../components/ui/loading-spinner';
+import { Tree } from '../../lib/types';
 
 function NearestTree() {
   const [trees, setTrees] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -56,16 +57,16 @@ function NearestTree() {
       {error && <p>Error: {error}</p>}
       {!error && !isLoading && trees.length === 0 && <p>No se encontraron arboles en la cercania.</p>}
       <div className="flex flex-wrap gap-4 justify-center items-stretch">
-        {trees.map((tree, index) => (
+        {trees.map((tree: Tree) => (
           <div className="w-full h-full sm:w-1/2 md:w-1/3 lg:w-1/5 m-2">
             <div className="rounded-t-lg bg-emerald-500 p-4 ">
-              <p className="text-center text-xl text-white text-bold font-semibold">{tree?.information.name}</p>
+              <p className="text-center text-xl text-white text-bold font-semibold">{tree?.information?.name}</p>
             </div>
             <div>
-              <img src={tree.information.img} />
+              <img src={tree.information?.img} />
             </div>
             <div className="bg-orange-200 p-4">
-              <p className="text-justify">{tree.information.summary}</p>
+              <p className="text-justify">{tree.information?.summary}</p>
             </div>
             <div className="bg-orange-200 p-4">
 
