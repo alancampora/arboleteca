@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { MdPlace } from "react-icons/md";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
 import { LoadingSpinner } from '../../components/ui/loading-spinner';
 
 function NearestTree() {
@@ -72,7 +71,7 @@ function NearestTree() {
 
               <div className="flex items-center justify-center">
                 <MdPlace className="text-emerald-500"/>
-                <p className="text-justify">{tree.direccion_normalizada}</p>
+                <p className="text-justify">{tree.address}</p>
 
               </div>
             </div>

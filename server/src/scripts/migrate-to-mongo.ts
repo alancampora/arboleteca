@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { Tree } from '../models/tree';
-import data from '../../data/output_1.json';
+import data from '../../data/output_street_0.json';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -10,18 +10,17 @@ const connectionString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.
 
 async function run() {
   try {
-    return;
-
     await mongoose.connect(connectionString);
 
     // Transformar datos a formato GeoJSON para 'location'
     const docs = data.map(item => ({
       ...item,
+      type: "street",
       location: {
         type: "Point",
         coordinates: [
-          // parseFloat(item.long),
-          // parseFloat(item.lat)
+          parseFloat(item.long),
+          parseFloat(item.lat)
         ]
       }
     }));

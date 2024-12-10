@@ -4,6 +4,7 @@ import cors from 'cors';
 import { findNearestTrees } from './utils/find-nearest-trees';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import lowercaseSecond from './utils/lowercase-second';
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -28,7 +29,8 @@ app.get('/nearest/tree', async (req: any, res: any) => {
     let nearestTressWithMoreData = [];
     for (const tree of nearestTrees) {
       const formattedTree = tree.toObject();
-      nearestTressWithMoreData.push({ ...formattedTree, information: { ...treeInformation[formattedTree?.nombre_cientifico as keyof typeof treeInformation] } });
+      const treeKey = lowercaseSecond(formattedTree?.scientific_name) as keyof typeof treeInformation;
+      nearestTressWithMoreData.push({ ...formattedTree, information: { ...treeInformation[treeKey] } });
     }
 
     //res.json(nearestTrees);

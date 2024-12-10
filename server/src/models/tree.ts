@@ -1,63 +1,101 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 
-interface ITree extends Document {
+// Subschema for GeoJSON Location
+const locationSchema = new Schema({
+  type: {
+    type: String,
+    enum: ['Point'],
+    required: true,
+  },
+  coordinates: {
+    type: [Number], // [longitude, latitude]
+    required: true,
+  },
+}, { _id: false });
+
+// Interface for the Tree Document
+export interface ITree extends Document {
+  id_tree: string;
+  type: 'street' | 'park';
   long: string;
   lat: string;
-  nro_registro: string;
-  tipo_activ: string;
-  comuna: string;
-  manzana: string;
-  calle_nombre: string;
-  calle_altura: string;
-  calle_chapa: string;
-  direccion_normalizada: string;
-  ubicacion: string;
-  nombre_cientifico: string;
-  ancho_acera: string;
-  estado_plantera: string;
-  ubicacion_plantera: string;
-  nivel_plantera: string;
-  diametro_altura_pecho: string;
-  altura_arbol: string;
   location: {
-    type: string;
-    coordinates: [number, number]; // [longitud, latitud]
+    type: 'Point';
+    coordinates: [number, number]; // Longitude, Latitude
+  };
+  scientific_name: string;
+  total_height?: string;
+  diameter?: string;
+  address?: string;
+  id_specie?: string;
+
+  // Street-specific fields
+  street_info?: {
+    district?: string;
+    street_name?: string;
+    street_number?: string;
+    street_metal_number?: string;
+    sidewalk_width?: string;
+    planter_condition?: string;
+    planter_location?: string;
+    planter_level?: string;
+  };
+
+  // Park-specific fields
+  park_info?: {
+    park?: string;
+    inclination?: string;
+    common_name?: string;
+    leaf_type?: string;
+    family_type?: string;
+    genus_name?: string;
+    origin?: string;
+    coord_x?: string;
+    coord_y?: string;
   };
 }
 
-const TreeSchema = new Schema<ITree>({
-  long: String,
-  lat: String,
-  nro_registro: String,
-  tipo_activ: String,
-  comuna: String,
-  manzana: String,
-  calle_nombre: String,
-  calle_altura: String,
-  calle_chapa: String,
-  direccion_normalizada: String,
-  ubicacion: String,
-  nombre_cientifico: String,
-  ancho_acera: String,
-  estado_plantera: String,
-  ubicacion_plantera: String,
-  nivel_plantera: String,
-  diametro_altura_pecho: String,
-  altura_arbol: String,
-  location: {
-    type: {
-      type: String,
-      enum: ["Point"],  // Solo acepta "Point"
-      required: true
-    },
-    coordinates: {
-      type: [Number],
-      required: true
-    }
-  }
-})
+// Main Tree Schema
+const treeSchema = new Schema<ITree>({
+  id_tree: { type: String, required: true },
+  type: { type: String, enum: ['street', 'park'], required: true },
 
+  long: { type: String, required: true },
+  lat: { type: String, required: true },
+  location: locationSchema, // GeoJSON location
 
-TreeSchema.index({ location: "2dsphere" });
+  scientific_name: { type: String, required: true },
+  total_height: { type: String },
+  diameter: { type: String },
+  address: { type: String },
+  id_specie: { type: String },
 
-export const Tree = mongoose.model<ITree>("Tree", TreeSchema);
+  street_info: {
+    district: { type: String },
+    street_name: { type: String },
+    street_number: { type: String },
+    street_metal_number: { type: String },
+    sidewalk_width: { type: String },
+    planter_condition: { type: String },
+    planter_location: { type: String },
+    planter_level: { type: String },
+  },
+
+  park_info: {
+    park: { type: String },
+    inclination: { type: String },
+    common_name: { type: String },
+    leaf_type: { type: String },
+    family_type: { type: String },
+    genus_name: { type: String },
+    origin: { type: String },
+    coord_x: { type: String },
+    coord_y: { type: String },
+  },
+});
+
+// Adding a 2dsphere index to the location field
+treeSchema.index({ location: '2dsphere' });
+
+// Export the model
+export const Tree = model<ITree>('Tree', treeSchema);
