@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { Tree } from '../models/tree';
-import data from '../../data/output_park_1.json';
+import data from '../../data/output_street_0.json';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -73,4 +73,4 @@ async function run(type:string) {
   }
 }
 
-run("park");
+run("street");

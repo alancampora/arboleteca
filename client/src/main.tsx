@@ -1,13 +1,19 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/home/index.tsx';
+import Landing from './pages/landing/index.tsx';
+import Explore from './pages/explore/index.tsx';
+//import Explore from './pages/explore/test.tsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Landing />,
+  },
+  {
+    path: "/explore",
+    element: <Explore />,
   },
 ]);
 
