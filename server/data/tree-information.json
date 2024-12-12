@@ -1911,7 +1911,8 @@
     "name": "Ceiba speciosa",
     "summary": "Ceiba speciosa, popularmente llamada palo borracho o árbol del puente, es una especie del género Ceiba nativa de las selvas tropical y subtropical de Sudamérica. Tiene varios nombres comunes locales: palo borracho, árbol botella, toborochi, árbol de la lana, palo rosado, samohú (del guaraní \"samu’ũ\"), lupuna hembra en Perú.[1]​ Pertenece a la misma familia del baobab y del kapok. Otra especie del género Ceiba, Ceiba chodatii, también recibe el mismo nombre común.\n",
     "origin": "Árbol de hoja caduca, de 10 a 20 m de altura, aunque no es excepcional que alcance más de 25 m. El tronco, ensanchado en su tercio inferior, le sirve para almacenar agua para tiempos de grave sequía. Está protegido por gruesos aguijones cónicos. En árboles jóvenes, el tronco es verde debido a su alto contenido en clorofila, capaz de realizar la fotosíntesis cuando faltan las hojas; con el tiempo, se forman vetas rugosas y agrietadas de color castaño grisáceo.\n",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Palo_Borracho_tree_in_Argentina.jpg/500px-Palo_Borracho_tree_in_Argentina.jpg"
+    "img_back": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Palo_Borracho_tree_in_Argentina.jpg/500px-Palo_Borracho_tree_in_Argentina.jpg",
+     "img": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Ceiba_speciosa_K2.jpg"
   },
   "Ficus alii": {},
   "Photinia serrulata": {
@@ -1989,7 +1990,8 @@
     "name": "Fraxinus pennsylvanica",
     "summary": "Fraxinus pennsylvanica, el fresno rojo americano[1]​ o fresno verde,[2]​ es una especie del género Fraxinus, de la familia del olivo (Oleaceae).  Las hojas son opuestas, raramente en verticilos de tres,  pinnadocompuestas. Las semillas están contenidas en una sámara.\n",
     "origin": "Tiene su área natural de origen en la región oriental de Estados Unidos y Canadá.\nSu cultivo se ha difundido en todo el Río de la Plata, por sus características similares a su tierra de origen, además de toda la Argentina, en particular en zonas rurales de provincias de Buenos Aires, Santa Fe, Córdoba, Mendoza y Entre Ríos. El fresno americano que crece en estas regiones fue clasificado erróneamente como Fraxinus americana, de características similares a F. Pennsylvanica, con identificación difícil. El envés de las hojas de Fraxinus americana  es más iluminado que el haz. Fraxinus pennsylvanica tiene las hojas exactamente iguales arriba y abajo. También, cada especie ocupa distintos nichos ecológicos: el fraxinus americana de zonas altas húmedas; el Fraxinus pennsylvanica en forestas húmedas e inundables, aunque suelen solaparse en la distribución.\n",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fraxinus_pensylvanica_a1.jpg/480px-Fraxinus_pensylvanica_a1.jpg"
+    "img_back": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fraxinus_pensylvanica_a1.jpg/480px-Fraxinus_pensylvanica_a1.jpg",
+     "img":"https://i.imgur.com/BNfZbIR.jpeg"
   },
   "Peltophorum dubium": {
     "name": "Peltophorum dubium",

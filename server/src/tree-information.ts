@@ -1911,7 +1911,8 @@ export default {
     "name": "Ceiba speciosa",
     "summary": "Ceiba speciosa, popularmente llamada palo borracho o árbol del puente, es una especie del género Ceiba nativa de las selvas tropical y subtropical de Sudamérica. Tiene varios nombres comunes locales: palo borracho, árbol botella, toborochi, árbol de la lana, palo rosado, samohú (del guaraní \"samu’ũ\"), lupuna hembra en Perú.[1]​ Pertenece a la misma familia del baobab y del kapok. Otra especie del género Ceiba, Ceiba chodatii, también recibe el mismo nombre común.\n",
     "origin": "Árbol de hoja caduca, de 10 a 20 m de altura, aunque no es excepcional que alcance más de 25 m. El tronco, ensanchado en su tercio inferior, le sirve para almacenar agua para tiempos de grave sequía. Está protegido por gruesos aguijones cónicos. En árboles jóvenes, el tronco es verde debido a su alto contenido en clorofila, capaz de realizar la fotosíntesis cuando faltan las hojas; con el tiempo, se forman vetas rugosas y agrietadas de color castaño grisáceo.\n",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Palo_Borracho_tree_in_Argentina.jpg/500px-Palo_Borracho_tree_in_Argentina.jpg"
+    "img_back": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Palo_Borracho_tree_in_Argentina.jpg/500px-Palo_Borracho_tree_in_Argentina.jpg",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Ceiba_speciosa_K2.jpg"
   },
   "Ficus alii": {},
   "Photinia serrulata": {

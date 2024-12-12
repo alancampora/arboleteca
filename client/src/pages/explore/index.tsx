@@ -3,6 +3,7 @@ import { MdPlace } from "react-icons/md";
 import { LoadingSpinner } from '../../components/ui/loading-spinner';
 import { Tree } from '../../lib/types';
 import Header from '../components/header';
+import { Link } from 'react-router-dom';
 
 function NearestTree() {
   const [trees, setTrees] = useState([]);
@@ -70,10 +71,12 @@ function NearestTree() {
                   <p className="text-center text-xl text-white text-bold font-semibold">{tree?.information?.name}</p>
                 </div>
                 <div>
-                  <img src={tree.information?.img} />
+                  <img
+                    className="w-full h-52 object-cover"
+                    src={tree.information?.img} />
                 </div>
-                <div className="bg-orange-200 p-4">
-                  <p className="text-justify">{tree.information?.summary}</p>
+                <div className="bg-orange-200 p-4 h-52 overflow-hidden">
+                  <p className="text-justify break-words  text-ellipsis">{tree.information?.summary}</p>
                 </div>
                 <div className="bg-orange-200 p-4">
 
@@ -83,6 +86,12 @@ function NearestTree() {
 
                   </div>
                 </div>
+                <Link
+                  to={`/explore/${tree._id}`}
+                  className="text-green-500 hover:underline"
+                >
+                  ver detalles
+                </Link>
               </div>
             ))}
           </div>

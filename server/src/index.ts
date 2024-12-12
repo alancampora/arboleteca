@@ -5,6 +5,8 @@ import { findNearestTrees } from './utils/find-nearest-trees';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import lowercaseSecond from './utils/lowercase-second';
+import { Tree } from './models/tree';
+
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -38,6 +40,24 @@ app.get('/nearest/tree', async (req: any, res: any) => {
   } catch (error) {
     console.error("Error en la consulta:", error);
     res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+app.get('/trees/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const tree = await Tree.findById(id); // Mongoose automatically converts to ObjectId
+    if (tree) {
+      const formattedTree = tree.toObject();
+      const treeKey = lowercaseSecond(formattedTree?.scientific_name) as keyof typeof treeInformation;
+      const treeWithInformation = { ...formattedTree, information: { ...treeInformation[treeKey] } };
+      res.status(200).json(treeWithInformation);
+    } else {
+      res.status(404).json({ error: 'Tree not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error', details: error.message });
   }
 });
 

@@ -1,4 +1,5 @@
 export type Tree = {
+  _id: string;
   id_tree: string;
   type: 'street' | 'park';
   long: string;
