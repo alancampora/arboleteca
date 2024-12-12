@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Stopping applications..."
-pm2 stop arboloteca-be || true
-pm2 stop arboloteca-fe || true
+pm2 delete arboloteca-be || true
+pm2 delete arboloteca-fe || true
 
 echo "Building backend..."
 cd server
