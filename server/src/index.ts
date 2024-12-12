@@ -57,7 +57,7 @@ app.get('/trees/:id', async (req, res) => {
       res.status(404).json({ error: 'Tree not found' });
     }
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error', details: error.message });
+    res.status(500).json({ error: 'Internal Server Error', details: "/trees/:id"});
   }
 });
 
