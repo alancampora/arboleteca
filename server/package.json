@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --diagnostics",
-    "migrate": "tsc && node dist/scripts/migrate-to-mongo.js",
-    "find-nearest": "tsc && node dist/utils/find-nearest.js",
+    "build": "tsc  --listFiles --diagnostics",
+    "migrate-to-mongo": "node ./scripts/migrate-to-mongo.js",
     "migrate-to-json": "node src/scripts/migrate.js",
-    "tree-from-wikipedia": "tsc && node dist/scripts/tree-from-wikipedia.js",
     "scrape-wikipedia": "node src/scripts/scrape-wikipedia.js",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts"

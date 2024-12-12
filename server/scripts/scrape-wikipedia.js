@@ -51,10 +51,10 @@ function toJson(nombreArchivo, datos) {
 }
 
 async function run() {
-    let results ={};
+  let results = {};
 
   for (const tree of allTrees) {
-    results = { [tree]: { ...await scrapeWikipedia(tree) }, ...results}
+    results = { [tree]: { ...await scrapeWikipedia(tree) }, ...results }
   }
 
 
