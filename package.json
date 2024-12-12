@@ -1,0 +1,14 @@
+{
+  "name": "@arboloteca",
+  "private": true,
+  "scripts": {
+    "prod:start": "pm2 start ./scripts/ecosystem.config.js",
+    "prod:reload": "pm2 reload all"
+  },
+  "workspaces": [
+    "client",
+    "server",
+  ],
+  "dependencies": {
+  }
+}
