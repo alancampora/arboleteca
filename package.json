@@ -7,6 +7,6 @@
   },
   "workspaces": [
     "client",
-    "server",
+    "server"
   ]
 }
