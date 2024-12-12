@@ -18,6 +18,6 @@ cd ..
 echo "Building frontend..."
 cd client
 npm install
-npm run preview --host
+npm run build
 pm2 start "npm run preview --host" --name arboloteca-fe
 cd ..
