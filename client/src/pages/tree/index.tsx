@@ -6,7 +6,6 @@ import { Tree } from "@/lib/types";
 const TreeProfilePage = () => {
   const { id } = useParams(); // Get the ID from the URL
   const [tree, setTree] = useState<Tree>(); // State for tree data
-  const [error, setError] = useState(null); // State for error handling
 
   useEffect(() => {
     const fetchTreeData = async () => {
