@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "Stopping applications..."
+#echo "Stopping applications..."
+pm2 stop arboloteca-be || true
+pm2 stop arboloteca-fe || true
+
+#echo "Delete applications..."
 pm2 delete arboloteca-be || true
 pm2 delete arboloteca-fe || true
 
