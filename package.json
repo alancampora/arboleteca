@@ -4,6 +4,7 @@
   "scripts": {
     "prod:start": "pm2 start ./scripts/ecosystem.config.js",
     "prod:reload": "pm2 reload all"
+    "prod:deploy": "./scripts/deploy.sh"
   },
   "workspaces": [
     "client",

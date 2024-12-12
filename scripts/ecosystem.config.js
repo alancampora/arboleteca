@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   {
-    name: "plantateca-fe",
+    name: "arboloteca-fe",
     cwd: "./client",
     script: "npm",
     args: "run preview --host",
