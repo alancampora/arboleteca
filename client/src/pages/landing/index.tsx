@@ -17,7 +17,7 @@ export default function LandingPage() {
           🌱 <strong>Identifica los árboles a tu alrededor</strong> según tu ubicación.
         </p>
         <p className="text-lg text-gray-700 mb-4">
-          📖 Aprende curiosidades, beneficios y datos interesantes sobre ellos.
+          🚶Sali de tu casa, <strong>camina unas cuadras</strong> y aprende curiosidades acerca del arbol que tienes cerca.
         </p>
         <p className="text-lg text-gray-700">
           🌍 <strong>Conecta con la naturaleza</strong> y conviértete en un protector del entorno.
