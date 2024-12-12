@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --diagnostics",
     "migrate": "tsc && node dist/scripts/migrate-to-mongo.js",
     "find-nearest": "tsc && node dist/utils/find-nearest.js",
     "migrate-to-json": "node src/scripts/migrate.js",
