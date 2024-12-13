@@ -4,6 +4,7 @@ import { LoadingSpinner } from '../../components/ui/loading-spinner';
 import { Tree } from '../../lib/types';
 import Header from '../components/header';
 import { Link } from 'react-router-dom';
+import Statistics from './components/statistics';
 
 function NearestTree() {
   const [trees, setTrees] = useState([]);
@@ -18,12 +19,19 @@ function NearestTree() {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+        let latitude;
+        let longitude;
 
+        if (import.meta.env.VITE_ENV === "development") {
+          latitude = "-34.629381"
+          longitude = "-58.443557"
+        } else {
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+        }
         // Now fetch from your endpoint with the user's actual location
         setIsLoading(true);
-        fetch(`http://localhost:3000/nearest/tree?lat=${latitude}&long=${longitude}`)
+        fetch(`${import.meta.env.VITE_API_URL}/nearest/tree?lat=${latitude}&long=${longitude}`)
           .then((response) => {
             if (!response.ok) {
               throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -50,6 +58,7 @@ function NearestTree() {
     );
   }, []);
 
+
   return (
     <div className="bg-stone-100 h-lvh ">
       <Header />
@@ -60,6 +69,7 @@ function NearestTree() {
 
       {!error && !isLoading && trees.length > 0 &&
         <div className="bg-gray-100 min-h-screen flex flex-col items-center px-6">
+
           <div className="text-center m-2 p-2">
             <h1 className="text-2xl">Arboles alrededor</h1>
           </div>
@@ -67,7 +77,7 @@ function NearestTree() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
             {trees.map((tree: Tree) => (
               <div className="">
-                <div className="bg-green-500 p-4 rounded-t-md">
+                <div className="bg-emerald-400 p-4 rounded-t-md">
                   <p className="text-center text-xl text-white text-bold font-semibold">{tree?.information?.name}</p>
                 </div>
                 <div>
@@ -95,6 +105,8 @@ function NearestTree() {
               </div>
             ))}
           </div>
+
+          <Statistics trees={trees} />
         </div>
       }
     </div>

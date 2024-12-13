@@ -11,7 +11,7 @@ const TreeProfilePage = () => {
   useEffect(() => {
     const fetchTreeData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/trees/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/trees/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch tree data");
         }
@@ -83,7 +83,7 @@ const TreeProfilePage = () => {
 
         {/* Optional Footer */}
         <footer className="mt-8 text-center text-gray-500">
-          © 2024 Tree Explorer
+          © 2024 Arboloteca
         </footer>
       </div>
       }
