@@ -53,6 +53,10 @@ export interface ITree extends Document {
     coord_x?: string;
     coord_y?: string;
   };
+
+  metadata?: {
+    distance: string;
+  }
 }
 
 // Main Tree Schema

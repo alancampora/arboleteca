@@ -1,7 +1,7 @@
 import treeInformation from './tree-information';
-import express, { Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
-import { findNearestTrees } from './utils/find-nearest-trees';
+import { findNearestTreesWithDistance } from './utils/find-nearest-trees';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import lowercaseSecond from './utils/lowercase-second';
@@ -27,12 +27,16 @@ app.get('/nearest/tree', async (req: any, res: any) => {
   }
 
   try {
-    const nearestTrees = await findNearestTrees(latitude, longitude);
+    const nearestTrees = await findNearestTreesWithDistance(latitude, longitude);
     let nearestTressWithMoreData = [];
     for (const tree of nearestTrees) {
-      const formattedTree = tree.toObject();
+      const formattedTree = tree;
       const treeKey = lowercaseSecond(formattedTree?.scientific_name) as keyof typeof treeInformation;
-      nearestTressWithMoreData.push({ ...formattedTree, information: { ...treeInformation[treeKey] } });
+      nearestTressWithMoreData.push({
+        ...formattedTree, information: { ...treeInformation[treeKey] }, metadata: {
+          distance: tree.distance,
+        }
+      });
     }
 
     //res.json(nearestTrees);
@@ -57,7 +61,7 @@ app.get('/trees/:id', async (req, res) => {
       res.status(404).json({ error: 'Tree not found' });
     }
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error', details: "/trees/:id"});
+    res.status(500).json({ error: 'Internal Server Error', details: "/trees/:id" });
   }
 });
 
