@@ -57,6 +57,7 @@ const TreeProfilePage = () => {
           <Skeleton className="h-4 w-[250px]" />
         </div>
         }
+
         {!isLoading && <div className="text-center mt-4">
           <h1 className="text-2xl font-bold">{tree?.information?.name}</h1>
           <p className="text-gray-600">{tree?.scientific_name}</p>
@@ -64,15 +65,10 @@ const TreeProfilePage = () => {
         }
 
         {/* Tree Details */}
-        {!isLoading && <div className="max-w-3xl mx-auto mt-8 bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-800">Resumen</h2>
-          <p className="text-justify">{tree?.information?.summary}</p>
-        </div>
-        }
+        <Card showSkeleton={isLoading} title="Resumen" text={tree?.information?.summary} />
 
-        {isLoading && <Skeleton className="max-w-3xl mx-auto mt-8 shadow rounded-lg p-6" />}
-        {!isLoading && <div className="max-w-3xl mx-auto mt-8 bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-800">Datos</h2>
+        {/* Tree Specific Data */}
+        <Card showSkeleton={isLoading} title="Caracteristicas">
           <ul className="mt-4 space-y-2">
             <li
               className="flex justify-between text-gray-700 border-b pb-2"
@@ -94,8 +90,8 @@ const TreeProfilePage = () => {
               <span>{`${tree?.diameter} metros`}</span>
             </li>
           </ul>
-        </div>
-        }
+
+        </Card>
 
 
         {tree?.information?.sections.map((section: Section) => {
@@ -104,10 +100,6 @@ const TreeProfilePage = () => {
             title={section.heading}
             text={section.paragraphs.join()} />)
         })}
-
-        {isLoading && <Skeleton className="max-w-3xl mx-auto mt-8 shadow rounded-lg p-6" />}
-
-
 
 
         {/* Optional Footer */}
