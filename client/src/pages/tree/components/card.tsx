@@ -10,7 +10,7 @@ export type CardProps = {
 export default function Card({ showSkeleton, title, text, children }: CardProps) {
   return (
     <>
-      {showSkeleton && <Skeleton className="max-w-3xl m-4 sm:mx-aut shadow rounded-lg p-6" />}
+      {showSkeleton && <Skeleton className="max-w-3xl m-4 sm:mx-auto shadow rounded-lg p-6" />}
 
       {/* Tree Details */}
       {
