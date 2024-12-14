@@ -1,3 +1,7 @@
+export type Section = {
+  heading: string;
+  paragraphs: string[]
+}
 export type Tree = {
   _id: string;
   id_tree: string;
@@ -43,6 +47,7 @@ export type Tree = {
     name: string;
     summary: string;
     img: string;
+    sections: Section[];
   }
 
   metadata?: {

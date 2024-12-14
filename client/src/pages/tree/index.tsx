@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/header";
-import { Tree } from "@/lib/types";
+import { Section, Tree } from "@/lib/types";
 import { Skeleton } from "@/components/ui/skeleton";
+import Card from "./components/card";
 
 const TreeProfilePage = () => {
   const { id } = useParams(); // Get the ID from the URL
@@ -62,42 +63,52 @@ const TreeProfilePage = () => {
         </div>
         }
 
-        {isLoading && <Skeleton className="max-w-3xl mx-auto mt-8 shadow rounded-lg p-6" />}
-
         {/* Tree Details */}
         {!isLoading && <div className="max-w-3xl mx-auto mt-8 bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-800">Descripcion</h2>
+          <h2 className="text-xl font-semibold text-gray-800">Resumen</h2>
           <p className="text-justify">{tree?.information?.summary}</p>
         </div>
         }
 
-
         {isLoading && <Skeleton className="max-w-3xl mx-auto mt-8 shadow rounded-lg p-6" />}
         {!isLoading && <div className="max-w-3xl mx-auto mt-8 bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-800">Detalles</h2>
+          <h2 className="text-xl font-semibold text-gray-800">Datos</h2>
           <ul className="mt-4 space-y-2">
             <li
               className="flex justify-between text-gray-700 border-b pb-2"
             >
               <span className="font-medium">Direccion:</span>
-              <span>{tree?.address}</span>
+              <span>{tree?.address} </span>
             </li>
 
             <li
               className="flex justify-between text-gray-700 border-b pb-2"
             >
               <span className="font-medium">Altura:</span>
-              <span>{tree?.total_height}</span>
+              <span>{`${tree?.total_height} metros`}</span>
             </li>
             <li
               className="flex justify-between text-gray-700 border-b pb-2"
             >
               <span className="font-medium">Diametro:</span>
-              <span>{tree?.diameter}</span>
+              <span>{`${tree?.diameter} metros`}</span>
             </li>
           </ul>
         </div>
         }
+
+
+        {tree?.information?.sections.map((section: Section) => {
+          return (section.paragraphs.length > 0 && <Card
+            showSkeleton={isLoading}
+            title={section.heading}
+            text={section.paragraphs.join()} />)
+        })}
+
+        {isLoading && <Skeleton className="max-w-3xl mx-auto mt-8 shadow rounded-lg p-6" />}
+
+
+
 
         {/* Optional Footer */}
         <footer className="mt-8 text-center text-gray-500">
