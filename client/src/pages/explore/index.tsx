@@ -78,7 +78,7 @@ function NearestTree() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
             {trees.map((tree: Tree) => (
               <div className="">
-                <div className="bg-emerald-400 p-4 rounded-t-md">
+                <div className="bg-emerald-500 p-4 rounded-t-md">
                   <p className="text-center text-xl text-white text-bold font-semibold">{tree?.information?.name}</p>
                 </div>
                 <div>
@@ -105,13 +105,16 @@ function NearestTree() {
                   }
                 </div>
 
+                <div className="bg-emerald-500 p-4 rounded-b-md text-right">
                 <Link
                   to={`/explore/${tree._id}`}
-                  className="text-green-500 hover:underline"
+                  className="text-orange-100"
                 >
-                  ver detalles
+                  Ver detalles
                 </Link>
+                </div>
               </div>
+
             ))}
           </div>
 
