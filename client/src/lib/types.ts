@@ -44,6 +44,10 @@ export type Tree = {
     summary: string;
     img: string;
   }
+
+  metadata?: {
+    distance: string;
+  }
 }
 
 

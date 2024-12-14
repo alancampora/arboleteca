@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { MdPlace } from "react-icons/md";
+import { MdPlace} from "react-icons/md";
+import { GiPathDistance } from "react-icons/gi";
 import { LoadingSpinner } from '../../components/ui/loading-spinner';
 import { Tree } from '../../lib/types';
 import Header from '../components/header';
@@ -90,12 +91,20 @@ function NearestTree() {
                 </div>
                 <div className="bg-orange-200 p-4">
 
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-left mb-2">
                     <MdPlace className="text-emerald-500" />
-                    <p className="text-justify">{tree.address}</p>
+                    <p className="text-sm text-justify lowercase first-letter:uppercase ml-2">{tree.address}</p>
 
                   </div>
+                  {tree.metadata?.distance &&
+                    <div className="flex items-center justify-left">
+                      <GiPathDistance className="text-emerald-500" />
+                      <p className="text-sm text-justify ml-2">{` Se encuentra a ${Math.round(parseFloat(tree.metadata.distance))} metros`}</p>
+
+                    </div>
+                  }
                 </div>
+
                 <Link
                   to={`/explore/${tree._id}`}
                   className="text-green-500 hover:underline"
