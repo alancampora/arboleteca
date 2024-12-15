@@ -4,7 +4,10 @@ const cheerio = require("cheerio");
 const allTrees = require('./all-trees');
 
 // URL de la página de Wikipedia específica
-//
+function cleanText(text) {
+  return text.replace(/\[\d+\]​?/g, '');
+}
+
 function getSections(data) {
 
   const headingsWithParagraphs = [];
@@ -28,7 +31,8 @@ function getSections(data) {
 
     while (current.length && (!nextHeading.length || !current.is('.mw-heading.mw-heading2'))) {
       if (current.is('p')) {
-        paragraphs.push(current.text());
+        const pText = cleanText(current.text());
+        paragraphs.push(pText);
       }
       current = current.next();
     }
@@ -55,7 +59,7 @@ async function scrapeWikipedia(tree) {
     const $ = cheerio.load(data);
 
     const infoBox = $("table.infobox").first();
-    const summary = infoBox.nextAll("p").first().text();
+    const summary = cleanText(infoBox.nextAll("p").first().text());
 
     const headingDiv = $("div.mw-heading.mw-heading2").first();
     const origin = headingDiv.nextAll("p").first().text();
