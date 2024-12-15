@@ -98,7 +98,11 @@ const TreeProfilePage = () => {
           return (section.paragraphs.length > 0 && <Card
             showSkeleton={isLoading}
             title={section.heading}
-            text={section.paragraphs.join()} />)
+          >
+            {section.paragraphs.map((p: string) => <p className="text-justify mb-2">{`${p}\n`}</p>)}
+          </Card>
+
+          )
         })}
 
 
