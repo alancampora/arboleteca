@@ -1,11 +1,14 @@
 import treeInformation from './tree-information';
 import express from 'express';
 import cors from 'cors';
-import { findNearestTreesWithDistance } from './utils/find-nearest-trees';
+import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import lowercaseSecond from './utils/lowercase-second';
+
+import { findNearestTreesWithDistance } from './utils/find-nearest-trees';
 import { Tree } from './models/tree';
+import authRoutes from './routes/auth';
 
 dotenv.config();
 
@@ -15,6 +18,10 @@ const app = express();
 // Middleware para parsear JSON
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
+
+// Rutas
+app.use("/api/auth", authRoutes);
 
 app.get('/nearest/tree', async (req: any, res: any) => {
   const { lat, long } = req.query;

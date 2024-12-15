@@ -1,13 +1,13 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
 export type CardProps = {
-  showSkeleton: boolean;
+  showSkeleton?: boolean;
   title?: string;
   text?: string;
   children?: React.ReactNode;
 }
 
-export default function Card({ showSkeleton, title, text, children }: CardProps) {
+export default function Card({ showSkeleton = false, title, text, children }: CardProps) {
   return (
     <>
       {showSkeleton && <Skeleton className="max-w-3xl m-4 sm:mx-auto shadow rounded-lg p-6" />}
