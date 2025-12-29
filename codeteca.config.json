@@ -1,0 +1,9 @@
+{
+  "id": "arboleteca",
+  "name": "Arboleteca",
+  "description": "Aplicación para caminar y descubrir árboles cercanos, aprendiendo sobre especies urbanas. Actualmente disponible para CABA.",
+  "status": "active",
+  "repo": "https://github.com/alancampora/arboleteca",
+  "href": "/arboleteca",
+  "tags": ["typescript", "react", "node", "mongo", "geo", "maps"],
+}
