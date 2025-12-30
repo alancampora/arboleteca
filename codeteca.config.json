@@ -6,5 +6,6 @@
   "status": "active",
   "repo": "https://github.com/alancampora/arboleteca",
   "href": "/arboleteca",
-  "tags": ["typescript", "react", "node", "mongo", "geo", "maps"]
+  "tags": ["typescript", "react", "node", "mongo", "geo", "maps"],
+  "hasDetailedContent": true
 }
