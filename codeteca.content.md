@@ -10,14 +10,12 @@ Por ejemplo:
 * Estará sano ?
 * Cuando florece ? 
 
-Como puedo saber tan poco de ellos? Si no fuese por cada uno de esos árboles seria imposible correr en verano.
+No dejaba de pensar por qué sabemos tan poco de ellos. Además, si no fuese por cada uno de esos árboles seria imposible correr en verano en el parque 🏃🏽‍♂️.
 
 ## Manos a la obra
-Lo primero que pensé fue: "tal vez haya una especie de censo...".. y dicho y hecho! 
+Lo primero que pensé fue: "tal vez haya una especie de censo..." y dicho y hecho!  El gobierno de la ciudad publica los datos en https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal/resource/ecf38a47-563f-42c1-9bd4-7cedf35d536b. 
 
-El gobierno de la ciudad publica los datos en https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal/resource/ecf38a47-563f-42c1-9bd4-7cedf35d536b. 
-
-Por otro lado, lo malo es que las propiedades son muy escasas: 
+Por otro lado, a mi parecer, las propiedades son esacasas para lo que buscaba hacer: 
 
 * long	
 * lat	
@@ -37,4 +35,5 @@ Por otro lado, lo malo es que las propiedades son muy escasas:
 * diametro_altura_pecho	
 * altura_arbol
 
-Me hubiese encantado que tenga la cantidad de años, con eso podia entender todos los hechos historicos que ese arbol habia atrevesado. Ese feature va a quedar pendiente pero por lo menos ya podia lograr una experiencia entre la persona y el arbol: el usuario camina por la calle, ve un arbol que le gusta, abre la app y ve por lo menos algo de informacion y su especie
+Me hubiese encantado que tenga la edad de cada árbol, con eso podía entender todos los hechos historicos que ese arbol habia atrevesado. Ese feature finalmente lo tuve que dejar de lado, pero por lo menos ya podia lograr una experiencia entre la persona y el arbol: 
+> El usuario camina por la calle, ve un arbol que le gusta, abre la app y encuentra información de los árboles que lo rodean! 🤯
