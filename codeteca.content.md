@@ -67,5 +67,10 @@ Con el motor de búsqueda por geolocalización se abría un mundo de posibilidae
 ## 2. Búsqueda de árboles notables
 Si ya tenía la info, podía agregar una sección de árboles notables con información histórica de cada uno. 
 
+## 3. Fotos de los árboles
+Sería genial que al acercarse a un arbol, las personas puedan subir la foto del árbol. Además de sumar puntos, ayudarian a recolectar fotos de manera colectiva. Se podrían armar caminatas grupales para que las personas interactuen y además ayuden a arboloteca a crecer. 
+
 # Fin
-Esto es lo que amo de la programación! Tener una idea, desarrollarla y verla andar es algo impagable. La app ahora está offline, pero en algún momento volveré a correrla. Por otro lado, si quieren ver info de árboles pueden usar https://www.arboladourbano.com/, que sigue online, aunque la experiencia es totalmente distina a la de arboleteca. 
+Esto es lo que amo de la programación! Tener una idea, desarrollarla y verla andar es algo impagable. La app ahora está offline, pero en algún momento volveré a subirla. Todo esto lo estoy escribiendo un año después, y la verdad que me dieron muchas ganas de volver a construirla. 
+
+Por otro lado, si quieren ver info de árboles pueden usar https://www.arboladourbano.com/, que sigue online, aunque la experiencia es totalmente distina a la de arboleteca. 
