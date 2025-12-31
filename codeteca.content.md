@@ -58,11 +58,14 @@ Y ahora les dejo un video:
 
 # Features que me quedaron pendientes
 ## 1. Gamification
-Con el motor de busquéda por geolocalizacion, se abría un mundo de posibilidaes. Por ejemplo: 
+Con el motor de búsqueda por geolocalización se abría un mundo de posibilidaes. Por ejemplo: 
 
-* Dar puntos a las personas que más arboles tuvieron cerca.
+* Dar puntos a cada usuario por .
 * Mostrar un leader board
-* Darle puntos o badges especiales a los usuarios que encuentren, caminando, los arboles mas antiguos de la ciudad. Seguramente esta info esté en algún sitio. 
+* Darle más puntos o badges especiales a los usuarios que encuentren, caminando, los árboles más antiguos de la ciudad. Seguramente esa info esté en algún sitio. 
 
-## 2. Busqueda de arboles notables
-Si ya tenia la info, podia agregar una sección nueva de árboles notables con información historica de cada uno. 
+## 2. Búsqueda de árboles notables
+Si ya tenía la info, podía agregar una sección de árboles notables con información histórica de cada uno. 
+
+# Fin
+Esto es lo que amo de la programación! Tener una idea, desarrollarla y verla andar es algo impagable. La app ahora está offline, pero en algún momento volveré a correrla. Por otro lado, si quieren ver info de árboles pueden usar https://www.arboladourbano.com/, que sigue online, aunque la experiencia es totalmente distina a la de arboleteca. 
