@@ -4,18 +4,19 @@ Cerca de mi casa hay un parque muy hermoso y suelo ir bastante. Muchas veces sol
 Una manaña me puse a pensar que cada uno de esos árboles vieron pasar miles de personas y hubo miles de situaciones al rededor de ellos pero, a su vez, nosotros sabemos muy poco de sobre su historia. 
 
 Por ejemplo: 
-* Hace cuanto tiempo que están ahi ? 
-* Cómo se llama su especie ?
-* Cuanto mide ?
-* Estará sano ?
-* Cuando florece ? 
+* ¿Hace cuánto tiempo que están ahí?
+* ¿Cómo se llama su especie?
+* ¿Cuánto mide?
+* ¿Estará sano?
+* ¿Cuándo florece?
+
 
 No dejaba de pensar por qué sabemos tan poco de ellos. Además, si no fuese por cada uno de esos árboles seria imposible correr en verano en el parque 🏃🏽‍♂️.
 
 ## Manos a la obra
-Lo primero que pensé fue: "tal vez haya una especie de censo..." y dicho y hecho!  El gobierno de la ciudad publica los datos en https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal/resource/ecf38a47-563f-42c1-9bd4-7cedf35d536b. 
+Lo primero que pensé fue: "tal vez haya una especie de censo..." y, dicho y hecho!  El gobierno de la ciudad publica los datos en https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal/resource/ecf38a47-563f-42c1-9bd4-7cedf35d536b. 
 
-Por otro lado, a mi parecer, las propiedades son esacasas para lo que buscaba hacer: 
+Por otro lado, a mi parecer, las propiedades son escasas para lo que buscaba hacer: 
 
 * long	
 * lat	
@@ -35,14 +36,14 @@ Por otro lado, a mi parecer, las propiedades son esacasas para lo que buscaba ha
 * diametro_altura_pecho	
 * altura_arbol
 
-Me hubiese encantado que tenga la edad, con eso podía entender todos los hechos históricos que cada arbol habia atrevesado y podia agregar un timeline. Ese feature finalmente lo tuve que dejar de lado, pero por lo menos ya podia lograr una experiencia entre la persona y el arbol: 
+Me hubiese encantado que tuviera la edad; con eso podría haber mostrado todos los hechos históricos que cada árbol habia atrevesado y agregar un timeline. Ese feature finalmente lo tuve que dejar de lado, pero por lo menos ya podia lograr una experiencia entre la persona y el árbol: 
 
-> El usuario camina por la calle, ve un arbol que le gusta, abre la app y encuentra información de los árboles que lo rodean! 🤯
+> El usuario camina por la calle, ve un árbol que le gusta, abre la app y encuentra información de los árboles que lo rodean! 🤯
 
-Además, desarollé un script (o lo vibecodee, no recuerdo bien) para extender la info con data provieniente de wikipedia. Con esto podia mostrar una foto genérica y una foto de cada arbol. También me hubiera encantando que cada arbol tenga su foto, pero, como se puede ver arriba, el dataset original no tiene esa info.
+Además, desarollé un script (o lo vibecodeé, no recuerdo bien) para extender la info con data provieniente de Wikipedia. Con esto, además de los datos del censo, podía mostrar una foto genérica y e información específica de cada especie. También me hubiera encantando que cada árbol tenga su propia foto, pero, como se puede ver arriba, el dataset original no tiene esa info.
 
 # Resultado Final
-Ahora sí! Una vez que ya tenía todo deployado y corriendo, cómo iba hacer para probarlo ? Qué mejor que salir a caminar por el parque para ver si la experiencia del usuario funcionaba como lo había pensado. 
+Ahora sí! Una vez que ya tenía todo deployado y corriendo, ¿cómo iba hacer para probarlo ? Qué mejor que salir a caminar por el parque para ver si la experiencia del usuario funcionaba como lo había pensado! 
 
 Y ahora les dejo un video: 
 
