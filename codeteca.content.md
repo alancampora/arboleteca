@@ -42,7 +42,7 @@ Me hubiese encantado que tuviera la edad; con eso podría haber mostrado todos l
 
 Además, desarollé un script (o lo vibecodeé, no recuerdo bien) para extender la info con data provieniente de Wikipedia. Con esto, además de los datos del censo, podía mostrar una foto genérica y e información específica de cada especie. También me hubiera encantando que cada árbol tenga su propia foto, pero, como se puede ver arriba, el dataset original no tiene esa info.
 
-# Resultado Final
+## Resultado Final
 Ahora sí! Una vez que ya tenía todo deployado y corriendo, ¿cómo iba hacer para probarlo ? Qué mejor que salir a caminar por el parque para ver si la experiencia del usuario funcionaba como lo había pensado! 
 
 Y ahora les dejo un video: 
@@ -56,21 +56,21 @@ Y ahora les dejo un video:
   </iframe>
 </div>
 
-# Features que me quedaron pendientes
-## 1. Gamification
+## Features que me quedaron pendientes
+### 1. Gamification
 Con el motor de búsqueda por geolocalización se abría un mundo de posibilidaes. Por ejemplo: 
 
 * Dar puntos a cada usuario por .
 * Mostrar un leader board
 * Darle más puntos o badges especiales a los usuarios que encuentren, caminando, los árboles más antiguos de la ciudad. Seguramente esa info esté en algún sitio. 
 
-## 2. Búsqueda de árboles notables
+### 2. Búsqueda de árboles notables
 Si ya tenía la info, podía agregar una sección de árboles notables con información histórica de cada uno. 
 
-## 3. Fotos de los árboles
+### 3. Fotos de los árboles
 Sería genial que, al acercarse a un árbol, las personas puedan subir su foto. Además de sumar puntos, ayudarían a recolectar imágenes de manera colectiva. Incluso se podrían armar caminatas grupales para que las personas interactúen y, al mismo tiempo, ayuden a Arboleteca a crecer.
 
-# Fin
+## Conclusiones
 Esto es lo que amo de la programación! Tener una idea, desarrollarla y verla andar es algo impagable. La app ahora está offline, pero en algún momento volveré a subirla. Todo esto lo estoy escribiendo un año después y, la verdad, me dieron muchas ganas de volver a construirla.
 
 Por otro lado, si quieren ver información sobre árboles, pueden usar https://www.arboladourbano.com/, que sigue online, aunque la experiencia es totalmente distinta a la de Arboleteca.
