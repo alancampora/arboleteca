@@ -39,3 +39,20 @@ Me hubiese encantado que tenga la edad, con eso podía entender todos los hechos
 
 > El usuario camina por la calle, ve un arbol que le gusta, abre la app y encuentra información de los árboles que lo rodean! 🤯
 
+Además, desarollé un script (o lo vibecodee, no recuerdo bien) para extender la info con data provieniente de wikipedia. Con esto podia mostrar una foto genérica y una foto de cada arbol. También me hubiera encantando que cada arbol tenga su foto, pero, como se puede ver arriba, el dataset original no tiene esa info.
+
+# Resultado Final
+Ahora sí! Una vez que ya tenía todo deployado y corriendo, cómo iba hacer para probarlo ? Qué mejor que salir a caminar por el parque para ver si la experiencia del usuario funcionaba como lo había pensado. 
+
+Y ahora les dejo un video: 
+
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/jliZ6mKsaiU?playsinline=1"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+
