@@ -56,4 +56,13 @@ Y ahora les dejo un video:
   </iframe>
 </div>
 
+# Features que me quedaron pendientes
+## 1. Gamification
+Con el motor de busquéda por geolocalizacion, se abría un mundo de posibilidaes. Por ejemplo: 
 
+* Dar puntos a las personas que más arboles tuvieron cerca.
+* Mostrar un leader board
+* Darle puntos o badges especiales a los usuarios que encuentren, caminando, los arboles mas antiguos de la ciudad. Seguramente esta info esté en algún sitio. 
+
+## 2. Busqueda de arboles notables
+Si ya tenia la info, podia agregar una sección nueva de árboles notables con información historica de cada uno. 
