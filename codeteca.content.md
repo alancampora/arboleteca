@@ -60,7 +60,7 @@ Y ahora les dejo un video:
 ### 1. Gamification
 Con el motor de búsqueda por geolocalización se abría un mundo de posibilidaes. Por ejemplo: 
 
-* Dar puntos a cada usuario por .
+* Dar puntos a cada usuario por cada árbol encontrado.
 * Mostrar un leader board
 * Darle más puntos o badges especiales a los usuarios que encuentren, caminando, los árboles más antiguos de la ciudad. Seguramente esa info esté en algún sitio. 
 
